@@ -1,0 +1,27 @@
+TOPIC:THE PAPER IS ABOUT Battery Management System and the importance of SOC (State of Charge) in Battery and HEV.
+
+DISCUSSION: BMS basically monitors the battery parameters to enhance battery life.
+Methods like Coulomb counting ,Voltage delay and impedance method ignores a very important factor i.e temperature in its SOC calculation. Also it has limited co relation of SOC to SOH.
+
+SOLUTIONS:
+To solve these problems Smart Battery was introduced which has a degree of logic because of a microcontroller unit(MCU).
+
+SMART BATTERY:
+ Many maths relations like Peukert equation are useful in HEV batteries. In ROM of smart battery the T given to it in self discharge which are used to find SOC and in discharging the current and temperature is provided which gives the SOC.
+The RAM uses parameters like history of use and number of charge/discharge which reset the maximum battery capacity. Smart batteries co relates SOH to SOC very effectively by measuring the current maximum capacity of battery.
+
+
+HEV REQUIREMENTS:
+1. SOC is needed to provide the fuel gauge indication.
+2. SOC is required to check weather all the cells are having uniform charge to avoid over load on a single cell.
+3. SOC is required to determine the end the charging and discharging cycles.
+
+WHY THERE IS LIMIT TO CHARGING AND DISCHARGING CYCLE?
+There is an upper limit so that accept the regenerative power without overcharging any cell. Regenerative power is supplied in regenerative breaking.
+Also the lower limit is set so that it can give the necessary power required for boost or power start. 
+
+ALGORITHM IN MICROCONTROLLER
+It checks weather the temperature is below the maximum temperature (via BUS connections) and the SOC is between the limits otherwise if even one of the condition is not met it gives an alarm and disconnects the DC links. Also it does even in situations like Anti-Theft alarms.
+
+As the SOC algorithm uses the current and other parameters so if there is error in their measurement then there will be error in SOC calculations.
+
